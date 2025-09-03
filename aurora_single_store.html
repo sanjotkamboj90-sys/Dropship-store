@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora & Co. | Store</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; }
+    header { background: #111; color: #fff; padding: 1rem; text-align: center; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; }
+    .hero { background: #f4f4f4; padding: 2rem; text-align: center; }
+    .btn { background: #111; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    .products { display: flex; flex-wrap: wrap; justify-content: center; padding: 1rem; }
+    .product { background: #fff; border: 1px solid #ddd; border-radius: 5px; margin: 10px; padding: 1rem; text-align: center; width: 200px; }
+    footer { background: #111; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+    button { background: #111; color: #fff; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aurora & Co.</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Policies</a>
+      <a href="#">🛍️ Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Elevate the Everyday</h2>
+    <p>Discover beautifully designed essentials from trusted makers — quality, utility, and style.</p>
+    <a href="#" class="btn">Shop New Arrivals</a>
+  </section>
+
+  <section class="products" id="product-list">
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Elegant Tote Bag" />
+      <h3>Elegant Tote Bag</h3>
+      <p>$45</p>
+      <button onclick="addToCart('Elegant Tote Bag')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Smart Water Bottle" />
+      <h3>Smart Water Bottle</h3>
+      <p>$30</p>
+      <button onclick="addToCart('Smart Water Bottle')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Wireless Earbuds" />
+      <h3>Wireless Earbuds</h3>
+      <p>$60</p>
+      <button onclick="addToCart('Wireless Earbuds')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Cozy Blanket" />
+      <h3>Cozy Blanket</h3>
+      <p>$25</p>
+      <button onclick="addToCart('Cozy Blanket')">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Aurora & Co. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    let cart = [];
+    function addToCart(product) {
+      cart.push(product);
+      document.getElementById("cart-count").textContent = cart.length;
+      alert(product + " added to cart!");
+    }
+  </script>
+</body>
+</html>
